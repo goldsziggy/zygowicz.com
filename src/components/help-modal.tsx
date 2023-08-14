@@ -68,6 +68,18 @@ const ErrorModal = ({ open, handleClose }) => {
                 display="block"
                 mt="2rem"
               >
+                <strong>So then why does it look like a chat?</strong>
+                <br />
+                My goal here isn't to hide/mask that it is ChatGPT, but infact emphasize that. So I
+                give you a chat-box with a starter prompt and guided help.
+              </Typography>
+
+              <Typography
+                id="transition-modal-description"
+                variant="caption"
+                display="block"
+                mt="2rem"
+              >
                 <strong>Can I see the code for this?</strong>
                 <br />
                 Sure thing! Feel free to check it out on{" "}
