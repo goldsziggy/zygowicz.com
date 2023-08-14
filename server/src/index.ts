@@ -2,13 +2,14 @@ import * as dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
 import bodyParser from "body-parser"
-import postMessage from "./routes/post-message.js"
 import { validate, ValidationError, Joi } from "express-validation"
+import postMessage from "./routes/post-message.js"
+import { purgeExpiredData } from "./utils/data.js"
 
 dotenv.config()
 
 const app = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 const validation = {
   body: Joi.object({
@@ -31,6 +32,9 @@ if (process.env.CORS_URL) {
     })
   )
 }
+setInterval(() => {
+  purgeExpiredData()
+}, 1000 * 60 * 20)
 
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
