@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Autocomplete from "@mui/material/Autocomplete"
 import TextField from "@mui/material/TextField"
-import Grid from "@mui/material/Grid"
-import InputAdornment from "@mui/material/InputAdornment"
-import Typography from "@mui/material/Typography"
-import IconButton from "@mui/material/IconButton"
-import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import companies from "../companies.json"
 
 const CompanyInput = ({ setCompanyValue }) => {
@@ -14,7 +9,7 @@ const CompanyInput = ({ setCompanyValue }) => {
   useEffect(() => {
     const index = companies.findIndex((company) => company === value)
     setCompanyValue(index)
-  }, [value])
+  }, [value, setCompanyValue])
 
   return (
     <Autocomplete

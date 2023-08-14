@@ -6,7 +6,7 @@ import SmartToyIcon from "@mui/icons-material/SmartToy"
 import AccountBoxIcon from "@mui/icons-material/AccountBox"
 import ToggleButton from "@mui/material/ToggleButton"
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 import { Message } from "../common-types"
 
