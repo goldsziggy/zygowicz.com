@@ -14,6 +14,8 @@ const getMessage = (message) => {
 
   return `The individual replies with: ${message}.  Please reply answering the question keeping your answer less then 300 characters.`
 }
+
+// == @TODO: rework this to a single prompt == //
 const getUserOptions = async (api, parentMessageId, systemMessage) => {
   const conversation = await api.sendMessage(
     "Given the above message, generate 3 possible responses asking for information that the individual you are talking to.  Each response will be less than 10 words long, and shall be seperated by a new line.",
