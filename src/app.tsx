@@ -68,7 +68,7 @@ function App() {
         <Grid item xs={12}>
           <TopBar avatarUrl={MeImage} resumeName="Matthew Zygowicz" />
         </Grid>
-        <Grid item xs={12} sm={8} height="80%">
+        <Grid item xs={12} sm={8} height="80%" display="flex" justifyContent="center">
           <Chat
             isLoading={isLoading}
             options={options}
