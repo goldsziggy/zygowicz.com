@@ -23,7 +23,7 @@ const Chat = ({ messages, isLoading, options, handleSubmit }: ChatProps) => {
   })
 
   return (
-    <Paper sx={{ height: "100%" }} elevation={3}>
+    <Paper sx={{ height: "100%", maxHeight: "800px", maxWidth: "800px" }} elevation={3}>
       <Grid container height="100%">
         <Grid item xs={12} display="flex" flexDirection="column" height="100%" overflow="auto">
           {messages.map((message, index) => (
