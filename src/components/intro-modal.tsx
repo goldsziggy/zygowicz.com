@@ -69,7 +69,7 @@ const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
                 aria-label="Platform"
               >
                 <ToggleButton value="recruiter">Recruiter</ToggleButton>
-                <ToggleButton value="employee">Employee</ToggleButton>
+                <ToggleButton value="family">Family Friend</ToggleButton>
                 <ToggleButton value="technologist">Technologist</ToggleButton>
               </ToggleButtonGroup>
             </Grid>

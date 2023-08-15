@@ -9,9 +9,9 @@ import Typography from "@mui/material/Typography"
 
 const style = {
   position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  top: { xs: "10%", sm: "50%" },
+  left: { xs: "10%", sm: "50%" },
+  transform: { xs: "translate(-5%, -5%)", sm: "translate(-50%, -50%)" },
   "max-width": 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -44,8 +44,20 @@ const ErrorModal = ({ open }) => {
             </Grid>
             <Grid item xs={12} mt="1rem">
               <Typography id="transition-modal-description" variant="caption" display="block">
-                Most likely this is not anything on your side. This server is running on minimum
-                resources for cost-saving.
+                This server is running on minimum resources for cost-saving, and the error can be
+                due to either an unexpected response from ChatGPT, or simply my credit limit ran
+                out.
+              </Typography>
+
+              <Typography
+                id="transition-modal-description"
+                variant="caption"
+                mt="2rem"
+                display="block"
+              >
+                Please check out <a href="linkedin.com/in/matt-zygowicz">LinkedIn</a> or{" "}
+                <a href="github.com/goldsziggy">GitHub</a> and let me know if its having issues, or
+                simply to remark how cool of an idea this is
               </Typography>
 
               <Typography

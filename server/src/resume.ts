@@ -32,6 +32,9 @@ services are correctly indexed/logged/retained
 ● Mentored 1 Engineer to take a Senior Engineering Role
 ● Led Engineer Book Club with 2 Management focused books targeting
 Senior/Staff/Management engineers
+● Led with a Why Not Me attitude volunteering the team for 4 early stage cross-enterprise efforts so my team and I can help define the standards.
+● Ensure team efforts are recognized by holding 25 team events throughout the year and broadcasting successes.
+
 Senior Software Engineer November 2018 – April 2021
 Northwestern Mutual
 ● Senior Engineering talent on the Client Experience Identity team
@@ -48,6 +51,9 @@ and fast incident response handling resulting in an a net-reduction of
 >30% to client impact during high throughput events
 ● Leverage Terraform to manage 2 RDS deployments and 1 CloudFront
 Deployment
+● Established pattern for CICD SiteSpeed integrations so developers can see the impact of thier changes to their applications.
+● POC'd vendors with cost-analysis and identification of alternatives giving leverage in contract negotiations and helping drive a 6 figure cost reduction. 
+
 CONTACT
 ______________________________
 • matt@zygowicz.com
@@ -168,5 +174,9 @@ Engineering Guild community
 • Gave 2 Company-wide talks on
 tech where audience size for each
 ranged from 200-600 participants
+• Multiple years with 0 change-failures showing a consistent to code and release quality
+• Built a team from the ground-up to take over a domain of apps/services they had no experience with.
+• Spearheaded multiple Prioirty Incidents with rapid response leading my team through complex changes.
+
 `
 export default resume
