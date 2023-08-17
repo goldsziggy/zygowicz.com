@@ -12,9 +12,9 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup"
 
 const style = {
   position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  top: { xs: "5%", sm: "50%" },
+  left: { xs: "10%", sm: "50%" },
+  transform: { xs: "translate(-10%, -5%)", sm: "translate(-50%, -50%)" },
   "max-width": 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -48,10 +48,20 @@ const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
               </Typography>
             </Grid>
             <Grid item xs={12} mt="1rem">
-              <Typography id="transition-modal-description" variant="caption">
+              <Typography id="transition-modal-description" variant="caption" display="block">
                 This <strong>Resume/Portfolio site</strong> is driven by <strong>ChatGPT</strong>.
-                As such you can add additional context if you'd like! Please fill out the profile
-                info of who my AI Assistant is talking to.
+                It is an AI that's sole <strong>job is to promote me</strong> and act as my
+                'hype-bot' in a conversational manner.
+              </Typography>
+              <Typography
+                id="transition-modal-description"
+                variant="caption"
+                mt="1rem"
+                display="block"
+              >
+                As it is a chat-bot you can <strong>add additional context</strong> if you'd like!
+                Please fill out your job (if your comfortable) and the persona you want it to be (an
+                industry recrutier, a family friend, or a tech professional)
               </Typography>
             </Grid>
             <Grid item xs={12} mt="4rem">
