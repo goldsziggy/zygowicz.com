@@ -12,6 +12,18 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script type="application/javascript">
+      function getIP(json) {
+        window.USER_IP = json.ip
+      }
+    </script>
+
+    <script
+      type="application/javascript"
+      src="https://api.ipify.org?format=jsonp&callback=getIP"
+    ></script>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

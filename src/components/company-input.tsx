@@ -3,8 +3,12 @@ import Autocomplete from "@mui/material/Autocomplete"
 import TextField from "@mui/material/TextField"
 import companies from "../companies.json"
 
-const CompanyInput = ({ setCompanyValue }) => {
-  const [value, setValue] = useState("N/A")
+const CompanyInput = ({ setCompanyValue, foundCompany = "N/A" }) => {
+  const [value, setValue] = useState(foundCompany)
+
+  useEffect(() => {
+    setValue(foundCompany)
+  }, [foundCompany])
 
   useEffect(() => {
     const index = companies.findIndex((company) => company === value)

@@ -9,11 +9,13 @@ import Typography from "@mui/material/Typography"
 import CompanyInput from "./company-input"
 import ToggleButton from "@mui/material/ToggleButton"
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup"
+import { closestMatch } from "closest-match"
+import companies from "../companies.json"
 
 const style = {
   position: "absolute" as "absolute",
-  top: { xs: "5%", sm: "50%" },
-  left: { xs: "10%", sm: "50%" },
+  top: { xs: "10%", sm: "50%" },
+  left: { xs: "15%", sm: "50%" },
   transform: { xs: "translate(-10%, -5%)", sm: "translate(-50%, -50%)" },
   "max-width": 400,
   bgcolor: "background.paper",
@@ -24,6 +26,23 @@ const style = {
 
 const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
   const [companyValue, setCompanyValue] = React.useState("")
+  const [foundCompany, setFoundCompany] = React.useState("N/A")
+
+  React.useEffect(() => {
+    const setInitial = async () => {
+      try {
+        if (window.USER_IP) {
+          fetch(`http://ipwho.is/${window.USER_IP}`)
+            .then((res) => res.json())
+            .then((data) => {
+              const closest = closestMatch(data.connection.org, companies) || "N/A"
+              setFoundCompany(Array.isArray(closest) ? closest[0] : closest)
+            })
+        }
+      } catch (err) {}
+    }
+    setInitial()
+  }, [])
 
   return (
     <Modal
@@ -44,14 +63,15 @@ const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
           <Grid container>
             <Grid item xs={12}>
               <Typography id="transition-modal-title" variant="h6" component="h2">
-                GPT Assistant Form
+                Zygowicz Portfolio
               </Typography>
             </Grid>
             <Grid item xs={12} mt="1rem">
               <Typography id="transition-modal-description" variant="caption" display="block">
-                This <strong>Resume/Portfolio site</strong> is driven by <strong>ChatGPT</strong>.
-                It is an AI that's sole <strong>job is to promote me</strong> and act as my
-                'hype-bot' in a conversational manner.
+                This <strong>Resume/Portfolio site</strong> is driven by{" "}
+                <strong>Anthropic's Claude AI</strong>. It is an AI that's sole{" "}
+                <strong>job is to promote me</strong> and act as my 'hype-bot' in a conversational
+                manner.
               </Typography>
               <Typography
                 id="transition-modal-description"
@@ -60,12 +80,11 @@ const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
                 display="block"
               >
                 As it is a chat-bot you can <strong>add additional context</strong> if you'd like!
-                Please fill out your job (if your comfortable) and the persona you want it to be (an
-                industry recrutier, a family friend, or a tech professional)
+                Please fill out your job (if your comfortable). Hit start when ready!
               </Typography>
             </Grid>
             <Grid item xs={12} mt="4rem">
-              <CompanyInput setCompanyValue={setCompanyValue} />
+              <CompanyInput setCompanyValue={setCompanyValue} foundCompany={foundCompany} />
             </Grid>
             <Grid item xs={12} mt="2rem">
               <Typography mb="1rem" variant="body2">
@@ -79,24 +98,24 @@ const IntroModal = ({ open, handleSubmit, persona, setPersona }) => {
                 aria-label="Platform"
               >
                 <ToggleButton value="recruiter">Recruiter</ToggleButton>
-                <ToggleButton value="family">Family Friend</ToggleButton>
-                <ToggleButton value="technologist">Technologist</ToggleButton>
               </ToggleButtonGroup>
             </Grid>
             <Grid item xs={12} display="flex" justifyContent="flex-end" mt="4rem">
-              <Button
+              {/* <Button
                 onClick={() =>
                   handleSubmit({ message: companyValue, persona: persona || "recruiter" })
                 }
               >
                 Skip
-              </Button>
+              </Button> */}
               <Button
+                variant="contained"
+                fullWidth
                 onClick={() =>
                   handleSubmit({ message: companyValue, persona: persona || "recruiter" })
                 }
               >
-                Submit
+                Start
               </Button>
             </Grid>
           </Grid>

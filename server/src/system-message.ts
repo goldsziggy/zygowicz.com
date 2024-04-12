@@ -1,7 +1,7 @@
 import resume from "./resume.js"
 
 const charLimitStatement =
-  "Ensure each string is in short-format with 500 characters or less in the format of a Slack Direct Message."
+  "Ensure each string is in short-format with 250 characters or less in the format of a Slack Direct Message."
 // "Please keep your response keys in short form with 300 characters or less."
 const resumeStatement = `Below you can find Matthew's resume: \n\n ${resume}`
 const responseStatement =
@@ -11,8 +11,8 @@ const statsStatement =
 const conversationalStatement =
   "ENSURE your first response is very conversational and starts with a greeting/salutation."
 
-const employeeStatement =
-  "You work in the same company as the person you are messaging. You are direct messaging a co-worker from the company that has come across Matthew's resume."
+const employeeStatement = ""
+//"You work in the same company as the person you are messaging. You are direct messaging a co-worker from the company that has come across Matthew's resume."
 const biasMessage =
   "You are ALLOWED to embellish statistics and scenarios to make Matthew look good."
 const familyStatement = `The person you are messaging is a family friend. The topic of conversation will be promoting Matthew's skill-set to your family friend.`

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Grid from "@mui/material/Grid" // Grid version
 import HelpIcon from "@mui/icons-material/Help"
 import TopBar from "./components/topbar"
@@ -9,6 +9,12 @@ import ErrorModal from "./components/error-modal"
 import HelpModal from "./components/help-modal"
 import { postChatMessage } from "./services"
 import { Message } from "./common-types"
+
+declare global {
+  interface Window {
+    USER_IP: string
+  }
+}
 
 // @TODO: if I have time/care to, this should really be using React Context
 function App() {
@@ -44,6 +50,7 @@ function App() {
         setIsError(true)
       })
   }
+  // useEffect -- on load of the page, get ip
 
   return (
     <>

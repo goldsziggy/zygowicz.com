@@ -24,11 +24,18 @@ const Chat = ({ messages, isLoading, options, handleSubmit }: ChatProps) => {
 
   return (
     <Paper
-      sx={{ height: "100%", maxHeight: "800px", maxWidth: "800px", width: "100%" }}
+      sx={{ height: "100dvh", maxHeight: "800px", maxWidth: "800px", width: "100%" }}
       elevation={3}
     >
-      <Grid container height="100%">
-        <Grid item xs={12} display="flex" flexDirection="column" height="100%" overflow="auto">
+      <Grid container sx={{ height: "100dvh", overflow: "auto" }}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          flexDirection="column"
+          sx={{ height: { sm: "66%", md: "66%" }, maxHeight: { sm: "535px" } }}
+          overflow="auto"
+        >
           {messages.map((message, index) => (
             <motion.div
               key={index}
@@ -52,7 +59,12 @@ const Chat = ({ messages, isLoading, options, handleSubmit }: ChatProps) => {
           <div ref={messagesEndRef} />
         </Grid>
 
-        <Grid item xs={12} alignSelf="flex-end" sx={{}}>
+        <Grid
+          item
+          xs={12}
+          alignSelf="flex-end"
+          sx={{ height: { sm: "100%", md: "33%" }, maxHeight: { sm: "535px" } }}
+        >
           <Typography variant="h6" textAlign="center">
             Select your Follow-up
           </Typography>

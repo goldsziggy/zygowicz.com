@@ -4,6 +4,7 @@ import express from "express"
 import bodyParser from "body-parser"
 import { validate, ValidationError, Joi } from "express-validation"
 import postMessage from "./routes/post-message.js"
+import postMessageClaude from "./routes/post-message-claude.js"
 import { purgeExpiredData } from "./utils/data.js"
 
 dotenv.config()
@@ -40,7 +41,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const api = express.Router()
-api.post("/message", validate(validation), postMessage)
+// api.post("/message", validate(validation), postMessage)
+api.post("/message", validate(validation), postMessageClaude)
 
 app.use("/api", api)
 
